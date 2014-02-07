@@ -1,5 +1,5 @@
 ---
-abstract: 'Transpose, filter and validate data'
+abstract: 'Transpose, iterate, filter and validate data'
 author:
   - 'Stefan Hornburg (Racke) <racke@linuxia.de>'
 build_requires:
@@ -28,4 +28,4 @@ requires:
 resources:
   bugtracker: https://github.com/racke/Data-Transpose/issues
   repository: https://github.com/racke/Data-Transpose
-version: 0.0005
+version: 0.0006

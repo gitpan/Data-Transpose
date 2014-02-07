@@ -1,5 +1,5 @@
 {
-   "abstract" : "Transpose, filter and validate data",
+   "abstract" : "Transpose, iterate, filter and validate data",
    "author" : [
       "Stefan Hornburg (Racke) <racke@linuxia.de>"
    ],
@@ -51,5 +51,5 @@
          "url" : "https://github.com/racke/Data-Transpose"
       }
    },
-   "version" : "0.0005"
+   "version" : "0.0006"
 }

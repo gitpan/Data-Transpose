@@ -40,6 +40,7 @@ t/transpose-validation-classes.t
 t/transpose-validation-forms.t
 t/transpose-validation-objects.t
 t/transpose-validation.t
+t/transpose-validator-field.t
 t/transpose-validator-options.t
 META.yml                                 Module YAML meta-data (added by MakeMaker)
 META.json                                Module JSON meta-data (added by MakeMaker)

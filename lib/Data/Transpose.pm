@@ -17,11 +17,11 @@ transposing to different field names.
 
 =head1 VERSION
 
-Version 0.0007
+Version 0.0008
 
 =cut
 
-our $VERSION = '0.0007';
+our $VERSION = '0.0008';
 
 =head1 SYNOPSIS
 
@@ -74,6 +74,8 @@ the output hash.
 
 =back
 
+This doesn't apply to the L</transpose_object> method.
+
 =back
 
 =cut
@@ -105,7 +107,7 @@ sub new {
 
 =head2 field
 
-Add a new field object and returns it:
+Add a new L<field|Data::Transpose::Field> object and return it:
 
     $tp->field('email');
 
@@ -124,7 +126,7 @@ sub field {
 
 =head2 group
 
-Add a new group object and return it:
+Add a new L<group|Data::Transpose::Group> object and return it:
 
     $tp->group('fullname', $tp->field('firstname'), $tp->field('lastname'));
 
@@ -142,6 +144,10 @@ sub group {
 }
 
 =head2 transpose
+
+Transposes input:
+
+   $new_record = $tp->transpose($orig_record);
 
 =cut
 
@@ -182,6 +188,38 @@ sub transpose {
         }
         elsif ($self->{unknown} eq 'fail') {
             die "Unknown fields in input: ", join(',', keys %status), '.';
+        }
+    }
+
+    return \%new_record;
+}
+
+=head2 transpose_object
+
+Transposes an object into a hash reference.
+
+=cut
+
+sub transpose_object {
+    my ($self, $obj) = @_;
+    my ($weed_value, $fld_name, $new_name, %new_record, %status);
+
+    for my $fld (@{$self->{fields}}) {
+        $fld_name = $fld->name;
+
+        # set value and apply operations
+        if ($obj->can($fld_name)) {
+            $weed_value = $fld->value($obj->$fld_name());
+        }
+        else {
+            $weed_value = $fld->value;
+        }
+
+        if ($new_name = $fld->target) {
+            $new_record{$new_name} = $weed_value;
+        }
+        else {
+            $new_record{$fld_name} = $weed_value;
         }
     }
 

@@ -3,30 +3,30 @@ abstract: 'Transpose, iterate, filter and validate data'
 author:
   - 'Stefan Hornburg (Racke) <racke@linuxia.de>'
 build_requires:
-  ExtUtils::MakeMaker: 0
+  ExtUtils::MakeMaker: '0'
 configure_requires:
-  ExtUtils::MakeMaker: 0
+  ExtUtils::MakeMaker: '0'
 dynamic_config: 1
-generated_by: 'ExtUtils::MakeMaker version 6.66, CPAN::Meta::Converter version 2.133380'
+generated_by: 'ExtUtils::MakeMaker version 6.98, CPAN::Meta::Converter version 2.142690'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
-  version: 1.4
+  version: '1.4'
 name: Data-Transpose
 no_index:
   directory:
     - t
     - inc
 requires:
-  Business::CreditCard: 0.32
-  Email::Valid: 0
-  Module::Load: 0
-  Moo: 0
-  Scalar::Util: 0
-  Test::More: 0
-  Test::Warn: 0
-  Try::Tiny: 0
+  Business::CreditCard: '0.32'
+  Email::Valid: '0'
+  Module::Load: '0'
+  Moo: '0'
+  Scalar::Util: '0'
+  Test::More: '0'
+  Test::Warn: '0'
+  Try::Tiny: '0'
 resources:
   bugtracker: https://github.com/racke/Data-Transpose/issues
   repository: https://github.com/racke/Data-Transpose
-version: 0.0010
+version: '0.0011'
